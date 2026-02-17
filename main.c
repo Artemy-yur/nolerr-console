@@ -5,8 +5,6 @@
 
 #include "INIT.h"
 #include  "libraru/initlibery.h"
-#define MAX_CHOICE 8
-#define MIN_CHOICE 1
 
 static void wait_for_enter(void) {
     printf("\nНажмите Enter для продолжения...");
