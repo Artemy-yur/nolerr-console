@@ -14,7 +14,7 @@ void actions(void);
 void times(void);
 
 //wearth
-void get_weather_win(const char *city);
+void getWearth(void);
 
 //interface
 int start(void);

@@ -12,10 +12,11 @@ SRCS = main.c \
        file/workfiles.c \
        additions/calculator/calculator.c \
        additions/timenow.c \
-       additions/wearth/getWearth.c \
+       additions/wearth/wearth_get.c \
        interface/interface.c \
        additions/help/help.c \
-       additions/notich/notich.c
+       additions/notich/notich.c \
+       language/locale_managere.c 
 
 # Собираем все .o файлы из .c
 OBJS = $(SRCS:.c=.o)
@@ -24,7 +25,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(PROGRAM)
 	./$(PROGRAM)
 
-# Сборка программы (без ws2_32 для macOS/Linux)
+# Сборка программы
 $(PROGRAM): $(OBJS)
 	$(CC) $(OBJS) -o $(PROGRAM) -lm
 

@@ -14,7 +14,7 @@ def show_function_help():
  {GOLD}3.{RESET} {BOLD}actions(){RESET}      —  Математика (+, -, *, /, ^, √, sin)     
  {GOLD}4.{RESET} {BOLD}times(){RESET}        —  Дата и время (ЧЧ:ММ:СС, ДД.ММ.ГГГГ)    
  {GOLD}5.{RESET} {BOLD}get_weather(){RESET}  —  Погода (температура в городе)        
- {GOLD}6.{RESET} {BOLD}davidgpt(){RESET}  —  Нейросеть на базе Яндекс api          
+ {GOLD}6.{RESET} {BOLD}davidgpt(){RESET}     —  Нейросеть на базе Яндекс api          
  ══════════════════════════════════════════════════════════════ 
  {CYAN}Введите имя функции или {RESET}{BOLD}'exit'{RESET}{CYAN} для выхода             
 ╚══════════════════════════════════════════════════════════════╝{RESET}

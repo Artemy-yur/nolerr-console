@@ -26,23 +26,10 @@ void execute_choice(int choice)
     case 3:
         times();
         break;
-        case 4:
+	case 4:
         {
-
-#ifdef _WIN32
-            char city[50];
-            printf("Введите город: ");
-            scanf("%49s", city);
-            while (getchar() != '\n')
-                ; // Очистка буфера
-            get_weather_win(city);
+            getWearth();
             wait_for_enter();
-#else
-            printf("В linux системе пока не работает!");
-            getchar();
-            break;
-#endif
-            break;
         }
     case 5:
         python_help();
