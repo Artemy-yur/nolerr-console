@@ -4,10 +4,13 @@
  */
 #include "../../libraru/initlibery.h"
 #include "../../clearwin.h"
+#define PATH_SIZE 64
 
 void python_help(void) {
-    // Используем system(), чтобы запустить скрипт и дождаться его завершения
-    int status = system("python3 help.py");
+    char *path = malloc(PATH_SIZE); 
+    sprintf(path,"python3 additions/help/help.py");
+
+    int status = system(path);
 
     if (status == -1) {
         perror("Ошибка запуска help.py");
@@ -16,4 +19,5 @@ void python_help(void) {
         printf("Возврат в основную программу.\n");
 
     }
+    free(path);
 }
