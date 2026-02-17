@@ -5,7 +5,7 @@
 ![Платформа](https://img.shields.io/badge/platform-Windows%20|%20Linux-lightgrey)
 ![Версия](https://img.shields.io/badge/version-1.0-blue)
 
-**Nolerr OS** — собственная операционная система, созданная на C, Python и Go. Простая, надежная и легкая в использовании.
+**Nolerr OS** — собственная операционная система, созданная на C, Python. Простая, надежная и легкая в использовании.
 
 ---
 
@@ -55,7 +55,7 @@ interface/interface.c — Консольный интерфейс
 Файловый менеджер	file/workfiles.c	Работа с файлами: создание, чтение, удаление
 Калькулятор	additions/wearth/calculator.c	Математические вычисления
 Время и дата	additions/wearth/time.now.c	Отображение текущего времени и даты
-Погода	additions/wearth/getWearth.c, server.go	Получение информации о погоде через API
+Погода	additions/wearth/getWearth.c	Получение информации о погоде через API
 Справочная система	additions/help/help.c, help.py	Интерактивная справка
 Технологии
 Ядро: C (сборка через CMake)
