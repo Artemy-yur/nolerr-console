@@ -21,4 +21,4 @@ target_include_directories(Ezy_OS PRIVATE libraru)
 target_link_libraries(Ezy_OS ws2_32)
 
 configure_file(additions/help/help.py ${CMAKE_CURRENT_BINARY_DIR}/help.py COPYONLY)
-configure_file(additions/wearth/functions.py ${CMAKE_CURRENT_BINARY_DIR}/show_current_weather.py COPYONLY)
+configure_file(additions/wearth/show_current_weather.py ${CMAKE_CURRENT_BINARY_DIR}/show_current_weather.py COPYONLY)

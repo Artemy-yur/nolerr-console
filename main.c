@@ -24,11 +24,10 @@ void execute_choice(int choice)
     case 3:
         times();
         break;
-	case 4:
-        {
-            getWearth();
-            wait_for_enter();
-        }
+    case 4:
+         getWearth();
+         wait_for_enter();
+         break;
     case 5:
         python_help();
         break;
