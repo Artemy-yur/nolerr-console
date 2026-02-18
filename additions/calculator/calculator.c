@@ -4,10 +4,19 @@
  */
 
 
-#include "../../libraru/initlibery.h"
-#include "../../clearwin.h"
-#include "exitfunc.h"
+#include "../../sharedlibraries/global.h"
+#include "../../functions.h"
+#include "calculatorfunc.h"
+#include "../../sharedlibraries/platform.h"
 
+#define ARRAY_SIZE_ACTION 4
+
+const char *action_output[]  = {
+    "Корень\n",
+    "Степень\n",
+    "Калькулятор\n",
+    "Назад\n"
+};
 
 
 void actions(void) {
@@ -15,8 +24,11 @@ void actions(void) {
 
     while (1) {
         CLEAR;
-        printf("Выберите действие:\n1. Корень\n2. Степень\n3. Калькулятор\n4. Назад\nВаш выбор: ");
 
+        for (size_t i = 0; i < ARRAY_SIZE_ACTION; i++) {
+            printf(F_BLUE "[" F_WHITE "%d" F_BLUE "]" RESET " %s", i + 1, action_output[i]);
+        }
+        printf(F_WHITE "Ваш выбор: " RESET);
         int res = scanf("%hd", &v);
 
 

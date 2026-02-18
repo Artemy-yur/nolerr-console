@@ -3,9 +3,10 @@
  * Лицензия MIT: свободное использование с сохранением авторства
  */
 
-#include "../libraru/initlibery.h"
-#include "../clearwin.h"
+#include "../sharedlibraries/global.h"
+#include "../sharedlibraries/platform.h"
 #include  "interface.h"
+
 #define MAX_CHOICE 8
 #define MIN_CHOICE 1
 

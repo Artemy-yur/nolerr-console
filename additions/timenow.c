@@ -2,14 +2,13 @@
  * Nolerr-OS - Copyright (c) 2025 Артемий Юров
  * Лицензия MIT: свободное использование с сохранением авторства
  */
-#include "../libraru/initlibery.h"
-#include "../clearwin.h"
-#include "../INIT.h"
+
+#include "../sharedlibraries/global.h"
+#include "../functions.h"
+#include  "../sharedlibraries/platform.h"
 
 #ifdef _WIN32
-#include <conio.h>
-#include <windows.h>
-
+#include  "../sharedlibraries/platform.h"
 
 #else
 #include <unistd.h>

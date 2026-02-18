@@ -3,11 +3,12 @@
  * Лицензия MIT: свободное использование с сохранением авторства
  */
 
-#include "../clearwin.h"
-#include "../libraru/initlibery.h"
-#include <dirent.h>
-#include "../INIT.h"
+#include  "../sharedlibraries/platform.h"
+#include "../sharedlibraries/global.h"
+#include "../functions.h"
 #include "workfile.h"
+#include <dirent.h>
+
 
 #define MAX_CHOICE 6
 #define MIN_CHOICE 1

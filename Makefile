@@ -5,7 +5,7 @@ CC = gcc
 CFLAGS = -std=c2x -Wall -I.
 
 # Имя программы
-PROGRAM = Ezy_OS
+PROGRAM = starts_nolerros
 
 # Все исходники
 SRCS = main.c \
@@ -14,7 +14,7 @@ SRCS = main.c \
        additions/timenow.c \
        additions/wearth/wearth_get.c \
        interface/interface.c \
-       additions/help/help.c \
+       additions/help/external_help.c \
        additions/notich/notich.c \
        language/locale_managere.c 
 

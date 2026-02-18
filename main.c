@@ -3,8 +3,8 @@
  * Лицензия MIT: свободное использование с сохранением авторства
  */
 
-#include "INIT.h"
-#include  "libraru/initlibery.h"
+#include "functions.h"
+#include "sharedlibraries/global.h"
 
 static void wait_for_enter(void) {
     printf("\nНажмите Enter для продолжения...");

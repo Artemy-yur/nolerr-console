@@ -6,9 +6,11 @@
  * Лицензия MIT: свободное использование с сохранением авторства
  */
 
-#include "../../libraru/initlibery.h"
 #include <sys/stat.h>
-#include "../../clearwin.h"
+#include "../../sharedlibraries/global.h"
+#include "../../functions.h"
+#include "../../sharedlibraries/platform.h"
+
 
 int starts(void);
 static void read_notich(void);

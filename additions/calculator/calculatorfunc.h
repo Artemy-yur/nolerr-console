@@ -2,10 +2,13 @@
 // Created by Artemy on 12.02.2026.
 //
 
-#ifndef EZY_OS_EXITFUNC_H
-#define EZY_OS_EXITFUNC_H
-void actions(void);
+#ifndef CALCULATORFUNC_H 
+#define CALCULATORFUNC_H
+#include <stdio.h>
+#include  "../../sharedlibraries/platform.h"
 
+
+void actions(void);
 void exit_f(void) {
     while (true) {
         short v;

@@ -2,8 +2,9 @@
 * Nolerr-OS - Copyright (c) 2025 Артемий Юров
  * Лицензия MIT: свободное использование с сохранением авторства
  */
-#include "../../libraru/initlibery.h"
-#include "../../clearwin.h"
+#include "../../sharedlibraries/global.h"
+#include "../../functions.h"
+
 #define PATH_SIZE 64
 
 void getWearth(void) {

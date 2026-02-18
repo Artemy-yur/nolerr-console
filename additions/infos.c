@@ -1,11 +1,9 @@
 //
 // Created by Artemy on 04.02.2026.
 //
-#include  "../libraru/initlibery.h"
-#include  <windows.h>
-#include <psapi.h>
-#include <../clearwin.h>
-#include <../INIT.h>
+#include  "../sharedlibraries/platform.h"
+#include "../sharedlibraries/global.h"
+#include <../functions.h>
 
 
 static void cpu_info(void) {
