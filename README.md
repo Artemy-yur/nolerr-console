@@ -4,7 +4,7 @@
 ![Лицензия](https://img.shields.io/badge/license-MIT-yellow)
 ![Платформа](https://img.shields.io/badge/platform-Windows%20|%20Linux-lightgrey)
 ![Версия](https://img.shields.io/badge/version-1.0-blue)
-
+![ТГК](https://t.me/nolerr_os)
 **Nolerr OS** — собственная операционная система, созданная на C, Python. Простая, надежная и легкая в использовании.
 
 ---
