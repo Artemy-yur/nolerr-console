@@ -3,7 +3,7 @@
 //
 #include  "../sharedlibraries/platform.h"
 #include "../sharedlibraries/global.h"
-#include <../functions.h>
+#include "../functions.h"
 
 
 static void cpu_info(void) {
@@ -25,6 +25,7 @@ static void cpu_info(void) {
     }
 
 }
+
 static void mem_info(void) {
     MEMORYSTATUSEX memInfo;
     memInfo.dwLength = sizeof(MEMORYSTATUSEX);
@@ -36,6 +37,7 @@ static void mem_info(void) {
     printf("Total RAM: %llu MB\n", totalPhysMem / (1024 * 1024));
     printf("Free RAM: %llu MB\n", availPhysMem / (1024 * 1024));
 }
+
 static void print_memory_info() {
     PROCESS_MEMORY_COUNTERS pmc;
 

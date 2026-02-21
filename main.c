@@ -5,6 +5,7 @@
 
 #include "functions.h"
 #include "sharedlibraries/global.h"
+#include "sharedlibraries/platform.h"
 
 static void wait_for_enter(void) {
     printf("\nНажмите Enter для продолжения...");
@@ -58,7 +59,9 @@ void execute_choice(int choice)
 
 int main(void)
 {
-
+    initialization_fs();
+    CLEAR;
+    check_dependencies();
     int first_choice = starts();
     execute_choice(first_choice);
     starts();

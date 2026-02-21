@@ -19,12 +19,11 @@ static void write_notich(void);
 void notich(void)
 {
 
-    const char *filename = "notich.txt";
+    const char *filename = "../notich/notich.txt";
 
     // Проверка и создание файла
     if (access(filename, F_OK) != 0)
     {
-        // Перепроверять на разных системах не факт что работает.
         FILE *f = fopen(filename, "w");
         if (f)
             fclose(f);

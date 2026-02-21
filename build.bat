@@ -5,16 +5,18 @@ set SRCS=main.c^
  file/workfiles.c^
  additions/calculator/calculator.c^
  additions/timenow.c^
- additions/wearth/wearth_get.c^
+ additions/weather_module/wearth_get.c^
  interface/interface.c^
  additions/help/external_help.c^
  additions/infos.c^
- additions/notich/notich.c
+ filesystem/mainfs.c^
+ additions/notich/notich.c^
+ dependencies/dependencies_py.c
 
 set INCLUDES=-I. -Ilibraru
 
 echo Compiling with GCC...
-gcc %SRCS% %INCLUDES% -o starts_nolerros.exe -lws2_32 -Wall -Wextra -g
+gcc %SRCS% %INCLUDES% -o starts_nolerros.exe -lws2_32 -Wall -Wextra -g -lurlmon -lwinmm
 
 if %ERRORLEVEL% equ 0 (
     echo.

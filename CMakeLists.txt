@@ -13,12 +13,14 @@ add_executable(Ezy_OS
         additions/notich/notich.c
         language/locale_managere.c
         file/workfile.h
-        additions/wearth/wearth_get.c
+        additions/weather_module/wearth_get.c
         additions/help/external_help.c
+        filesystem/mainfs.c
+        dependencies/dependencies_py.c
 )
 
-target_include_directories(Ezy_OS PRIVATE libraru)
+target_link_libraries(Ezy_OS ws2_32 urlmon winmm)
 target_link_libraries(Ezy_OS ws2_32)
 
 configure_file(additions/help/show_function_help.py ${CMAKE_CURRENT_BINARY_DIR}/show_function_help.py COPYONLY)
-configure_file(additions/wearth/show_current_weather.py ${CMAKE_CURRENT_BINARY_DIR}/show_current_weather.py COPYONLY)
+configure_file(additions/weather_module/show_current_weather.py ${CMAKE_CURRENT_BINARY_DIR}/show_current_weather.py COPYONLY)

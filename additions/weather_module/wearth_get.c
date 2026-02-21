@@ -11,7 +11,7 @@ void getWearth(void) {
     // Используем system(), чтобы запустить скрипт и дождаться его завершения
     char *path = malloc(PATH_SIZE); 
 
-    sprintf(path,"python3 additions/wearth/show_current_weather.py");
+    sprintf(path,"python3 additions/weather_module/show_current_weather.py");
     int status = system(path);
 
     if (status == -1) {

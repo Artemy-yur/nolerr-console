@@ -28,6 +28,10 @@ void notich(void);
 void info_system(void);
 
 
+//file system
+void initialization_fs(void);
+void check_dependencies();
+
 #define F_BLUE    "\033[1;34m" // Основной синий
 #define F_CYAN    "\033[1;36m" // Светло-голубой
 #define F_WHITE   "\033[1;37m" // Жирный белый
