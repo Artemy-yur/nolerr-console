@@ -60,7 +60,6 @@ interface/interface.c — Консольный интерфейс
 Технологии
 Ядро: C (сборка через CMake)
 Скрипты: Python 3
-API сервер: Go (Golang)
 Интерфейс: Консольный интерфейс (поддержка Windows и Linux)
 Сборка: CMake + GCC / MinGW
 Установка и подготовка
@@ -69,7 +68,6 @@ Windows 10/11 или Linux
 CMake 3.10+
 GCC или MinGW (для Windows)
 Python 3.8+
-Go 1.16+ (для модуля погоды)
 Сборка проекта
 Для Windows
 batch
