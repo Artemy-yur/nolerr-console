@@ -31,7 +31,7 @@ void notich(void)
 
     short v = -1;
 
-    printf("Нажмите 0 чтобы вывести текст, 1 чтобы написать новую: ");
+    printf("Нажмите 1 чтобы вывести текст, 2 чтобы написать новую, 3 чтобы выйти: ");
 
     while (true)
     {
@@ -39,37 +39,26 @@ void notich(void)
         {
             while (getchar() != '\n')
                 ;
-            printf("Введите число 0 или 1: ");
+            printf("Введите число 1 до 3: ");
             continue;
         }
-        if (v == 0 || v == 1)
+        if (v <= 3)
         {
             break;
         }
-        printf("От 0 до 1: ");
+        printf("От 1 до 3: ");
     }
 
     switch (v)
     {
-    case 0:
-        read_notich();
-        while (true)
-        {
-            short v;
-            scanf("%hd", &v);
-            if (v > 0)
-            {
-                break;
-            }
-        }
-        CLEAR;
-        starts();
-        break;
     case 1:
-        write_notich();
-        CLEAR;
-        starts();
+        read_notich();
         break;
+    case 2:
+        write_notich();
+        break;
+    case 3:
+            starts();
     default:
         printf("Error");
     }
@@ -109,6 +98,8 @@ static void read_notich(void)
 
     puts(buffer);
     free(buffer);
+    while (getchar() != '\n');
+    return;
 }
 
 static void write_notich(void)
@@ -135,4 +126,5 @@ static void write_notich(void)
 
     fclose(f);
     printf("Текст сохранен\n");
+    notich();
 }

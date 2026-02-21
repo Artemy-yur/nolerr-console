@@ -9,5 +9,6 @@ static void readfile(const char *name);
 static void writefile(const char *name);
 static void deletefile(const char *name);
 static void copyfile(const char *from, const char *to);
+static void listfile_local(void);
 int starts(void);
 #endif //EZY_OS_WORKFILE_H

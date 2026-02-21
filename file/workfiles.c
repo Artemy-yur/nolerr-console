@@ -10,14 +10,14 @@
 #include <dirent.h>
 
 
-#define MAX_CHOICE 6
+#define MAX_CHOICE 7
 #define MIN_CHOICE 1
 
 #define NAME_LEN 20
 
 void menu_file(void) {
 
-    printf("1. Создать файл\n2. Прочитать содержимое\n3. Внести текст в файл\n4. Удалить файл\n5. Копировать файл\n6. Выход в меню\n");
+    printf("1. Создать файл\n2. Прочитать содержимое\n3. Внести текст в файл\n4. Удалить файл\n5. Копировать файл\n6. Все файлы\n7. Выход в меню\n");
 
     short v;
     while(1) {
@@ -30,7 +30,7 @@ void menu_file(void) {
         }
 
         if(v > MAX_CHOICE || v < MIN_CHOICE) {
-            printf(F_CYAN "  [!] Число должно быть от 1 до 6" RESET "\n");
+            printf(F_CYAN "  [!] Число должно быть от 1 до 7" RESET "\n");
         }
         else {
             break;
@@ -71,6 +71,9 @@ void menu_file(void) {
             copyfile(name1, name2);
         }
         case 6: {
+            listfile_local();
+        }
+        case 7: {
             CLEAR;
             starts();
             return;
@@ -235,14 +238,13 @@ void listfile(void) {
         return;
     }
 
-    int i = 0;
+    short i = 0;
     struct dirent *filelist;
 
     while ((filelist = readdir(listdir)) != NULL) {
             printf("%d - [FILE] %s\n", i, filelist->d_name);
         i++;
     }
-    printf("\n");
     printf("\n");
 
     short v;
@@ -257,4 +259,34 @@ void listfile(void) {
             starts();
         }
     }
+}
+void listfile_local(void) {
+    DIR *listdir = opendir("../File_work");
+    if (listdir == NULL) {
+        perror("Error");
+        SLEEP(3);
+        return;
+    }
+    short i = 0;
+    struct dirent *filelist;
+    while ((filelist = readdir(listdir)) != NULL) {
+        printf("%d - [FILE] %s\n", i, filelist->d_name);
+        i++;
+    }
+
+
+    short v;
+
+    printf("Press 0 to exit: ");
+
+    while (true) {
+        scanf("%hd", &v);
+        while (getchar() != '\n');
+        if (v == 0) {
+            closedir(listdir);
+            CLEAR;
+            menu_file();
+        }
+    }
+
 }
