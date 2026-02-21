@@ -40,11 +40,11 @@ help/ — справочная система
 wearth/ — погода, время, калькулятор
 workfiles.c — Управление файлами
 
-additions/wearth/calculator.c — Математика
+additions/calculator/calculator.c — Математика
 
-additions/wearth/time.now.c — Текущее время и дата
+additions/time.now.c — Текущее время и дата
 
-additions/wearth/getWearth.c, server.go — Погода через API
+additions/weather_module/getWearth.c, server.go — Погода через API
 
 additions/help/help.c, help.py — Справка
 
