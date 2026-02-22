@@ -57,6 +57,8 @@ interface/interface.c — Консольный интерфейс
 Время и дата	additions/wearth/time.now.c	Отображение текущего времени и даты
 Погода	additions/wearth/getWearth.c	Получение информации о погоде через API
 Справочная система	additions/help/help.c, help.py	Интерактивная справка
+Скачивания зависимотей dependencies/dependencies_py. Автоскачивания python 13.0, если он не скачан
+
 Технологии
 Ядро: C (сборка через CMake)
 Скрипты: Python 3
