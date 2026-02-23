@@ -40,34 +40,55 @@ void menu_file(void) {
     switch (v) {
         case 1: {
             char name[NAME_LEN];
+            char path_file[NAME_LEN + 20];
+
             printf("Enter your namefile: ");
             scanf("%s", name);
-            creatfile(name);
+            sprintf(path_file, "../File_work/%s", name);
+
+            creatfile(path_file);
             break;
         }
         case 2: {
             char name[NAME_LEN];
+            char path_file[NAME_LEN + 20];
+
             printf("Enter your namefile: ");
             scanf("%s", name);
-            readfile(name);
+            sprintf(path_file, "../File_work/%s", name);
+
+            readfile(path_file);
             break;
         }
         case 3: {
             char name[NAME_LEN];
+            char path_file[NAME_LEN + 20];
+
             printf("Enter your namefile: ");
             scanf("%s", name);
-            writefile(name);
+            sprintf(path_file, "../File_work/%s", name);
+
+            writefile(path_file);
         }
         case 4: {
             char name[NAME_LEN];
+            char path_file[NAME_LEN + 20];
+
             printf("Enter your namefile: ");
             scanf("%s", name);
-            deletefile(name);
+            sprintf(path_file, "../File_work/%s", name);
+
+            deletefile(path_file);
         }
         case 5: {
             char name1[NAME_LEN], name2[NAME_LEN];
+            char path_file1[NAME_LEN + 20],path_file2[NAME_LEN + 20];
+
             printf("Enter your namefile 1 and file 2: ");
             scanf("%s %s", name1,name2);
+            sprintf(path_file1, "../File_work/%s", name1);
+            sprintf(path_file2, "../File_work/%s", name2);
+
             copyfile(name1, name2);
         }
         case 6: {
@@ -232,7 +253,7 @@ void copyfile(const char *from, const char *to) {
 }
 
 void listfile(void) {
-    DIR *listdir = opendir(".");
+    DIR *listdir = opendir("../");
     if (listdir == NULL) {
         perror("Error in opendir()");
         return;

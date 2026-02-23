@@ -14,7 +14,6 @@ void check_dependencies()
 
     if (check() == CHECK)
     {
-        printf("Python Установлен");
         return;
     }
     else

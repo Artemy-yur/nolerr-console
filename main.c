@@ -59,9 +59,10 @@ void execute_choice(int choice)
 
 int main(void)
 {
-    //initialization_fs();
-    //CLEAR;
+    initialization_fs();
+    CLEAR;
     check_dependencies();
+    CLEAR;
     int first_choice = starts();
     execute_choice(first_choice);
     starts();
