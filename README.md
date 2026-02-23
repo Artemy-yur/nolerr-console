@@ -3,7 +3,7 @@
 ![Статус сборки](https://img.shields.io/badge/build-passing-green)
 ![Лицензия](https://img.shields.io/badge/license-MIT-yellow)
 ![Платформа](https://img.shields.io/badge/platform-Windows%20|%20Linux-lightgrey)
-![Версия](https://img.shields.io/badge/version-1.0-blue)
+![Версия](https://img.shields.io/badge/version-0.4-blue)
 
 **Nolerr OS** — собственная операционная система, созданная на C, Python. Простая, надежная и легкая в использовании.
 
@@ -40,11 +40,11 @@ help/ — справочная система
 wearth/ — погода, время, калькулятор
 workfiles.c — Управление файлами
 
-additions/wearth/calculator.c — Математика
+additions/calculator/calculator.c — Математика
 
-additions/wearth/time.now.c — Текущее время и дата
+additions/time.now.c — Текущее время и дата
 
-additions/wearth/getWearth.c, server.go — Погода через API
+additions/weather_module/getWearth.c, server.go — Погода через API
 
 additions/help/help.c, help.py — Справка
 
@@ -57,6 +57,8 @@ interface/interface.c — Консольный интерфейс
 Время и дата	additions/wearth/time.now.c	Отображение текущего времени и даты
 Погода	additions/wearth/getWearth.c	Получение информации о погоде через API
 Справочная система	additions/help/help.c, help.py	Интерактивная справка
+Скачивания зависимотей dependencies/dependencies_py. Автоскачивания python 13.0, если он не скачан
+
 Технологии
 Ядро: C (сборка через CMake)
 Скрипты: Python 3
@@ -89,26 +91,17 @@ cmake ..
 make
 ./Ezy_OS
 Разработка новых модулей
-Создайте папку в additions/.
-Добавьте файлы .c и .h с вашей логикой.
-Импортируйте вызовы в main.c, добавив их в switch-case.
-Пример:
 
-c
+Система спроектирована так, чтобы быть максимально расширяемой. Чтобы добавить свой модуль, следуйте инструкции:
 
-case 6: // Новая функция
-    new_module_function();
-    break;
-Пример файла модуля:
+1. Создайте новую папку в директории additions/ (например, additions/my_tool/).
 
-c
+2. Добавьте туда файлы .c и (при необходимости) .h.
 
-// example_module.c
-#include <stdio.h>
+3. В главном файле интерфейса (interface/interface.c или main.c) подключите заголовочный файл вашего модуля.
 
-void example_module_function() {
-    printf("Это новый модуль!\n");
-}
+4. Добавьте новый пункт в меню и вызовите функцию в switch-case.
+
 Документация по функциям
 Файловый менеджер: создание, чтение, удаление файлов, просмотр папок
 Погода: требует API-ключ OpenWeatherMap
