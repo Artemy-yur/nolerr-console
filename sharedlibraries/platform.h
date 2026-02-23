@@ -26,12 +26,13 @@
     #include <conio.h>
     #include <psapi.h>
     #include <urlmon.h>
+    #include <stdlib.h>
 
     #pragma comment(lib, "urlmon.lib")
     #pragma comment(lib, "winmm.lib")
 
     #define SLEEP(x) Sleep((x) * 1000)
-    #define CLEAR system("cls")
+    #define CLEAR system("cls");
     #define ACCESS(path) (_access(path, 0) == 0)
     #define F_OK 0
     #define MKDIR(x) _mkdir(x)
@@ -44,7 +45,7 @@
     #include <sys/stat.h>
 
     #define SLEEP(x) sleep(x)
-    #define CLEAR system("clear")
+    #define CLEAR system("clear");
     #define ACCESS(x) (access(x, F_OK) == 0)
     #define MKDIR(path) mkdir(path, 0775)
     #define PYTHON_CMD "python3 --version"
@@ -56,14 +57,14 @@
     #include <sys/stat.h>
 
     #define SLEEP(x) sleep(x)
-    #define CLEAR system("clear")
+    #define CLEAR system("clear");
     #define ACCESS(x) (access(x, F_OK) == 0)
     #define MKDIR(path) mkdir(path, 0775)
     #define PYTHON_CMD "python3 --version"
     #ifndef _MSC_VER
         #define _mkdir(path) mkdir(path, 0775)
     #endif
-    #define CHECK 1
+    #define CHECK 0
 #endif
 
 // Общие определения

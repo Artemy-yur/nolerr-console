@@ -48,7 +48,7 @@ int starts(void) {
         while (getchar() != '\n');
 
         if (choice == 0) {
-            CLEAR(2);
+            CLEAR;
             printf("До свидания!\n");
             exit(0);
         }

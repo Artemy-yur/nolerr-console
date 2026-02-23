@@ -20,16 +20,17 @@ const char *action_output[]  = {
 
 
 void actions(void) {
-    short v;
+    
 
     while (1) {
+        short v;
         CLEAR;
 
-        for (size_t i = 0; i < ARRAY_SIZE_ACTION; i++) {
+        for (short i = 0; i < ARRAY_SIZE_ACTION; i++) {
             printf(F_BLUE "[" F_WHITE "%d" F_BLUE "]" RESET " %s", i + 1, action_output[i]);
         }
         printf(F_WHITE "Ваш выбор: " RESET);
-        int res = scanf("%hd", &v);
+        short res = scanf("%hd", &v);
 
 
         while (getchar() != '\n');

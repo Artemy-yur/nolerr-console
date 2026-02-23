@@ -60,7 +60,7 @@ void info_system(void) {
     CLEAR;
     //russian_locale();
 
-    date now = {"14.02.2026", "Version 0.4"};
+    date now = {"22.02.2026", "Version 0.5"};
 
     printf(F_BLUE "       \n");
     printf(F_BLUE "       " F_WHITE "Nolerr-OS " F_BLUE "\n");

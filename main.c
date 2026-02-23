@@ -61,7 +61,7 @@ int main(void)
 {
     //initialization_fs();
     //CLEAR;
-    //check_dependencies();
+    check_dependencies();
     int first_choice = starts();
     execute_choice(first_choice);
     starts();

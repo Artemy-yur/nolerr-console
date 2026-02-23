@@ -4,20 +4,10 @@
 #include "../sharedlibraries/platform.h"
 #include <stdio.h>
 
-typedef struct
-{
-    char python[64];
-    int (*check)(void);
-    void (*install)(void);
-} Dependency;
-
 static int check(void){
     return system(PYTHON_CMD " > /dev/null 2>&1");
 }
 static void install_py(void);
-
-Dependency dependencies[] = {
-    {"python3", check, install_py}};
 
 void check_dependencies()
 {
