@@ -11,7 +11,8 @@ set SRCS=main.c^
  additions/infos.c^
  filesystem/mainfs.c^
  additions/notich/notich.c^
- dependencies/dependencies_py.c
+ dependencies/dependencies_py.c^
+ user_settings/user_rights.c
 
 set INCLUDES=-I. -Ilibraru
 

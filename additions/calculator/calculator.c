@@ -11,16 +11,15 @@
 
 #define ARRAY_SIZE_ACTION 4
 
-const char *action_output[]  = {
-    "Корень\n",
-    "Степень\n",
-    "Калькулятор\n",
-    "Назад\n"
-};
 
 
 void actions(void) {
-    
+    const char *action_output[]  = {
+        "Корень\n",
+        "Степень\n",
+        "Калькулятор\n",
+        "Назад\n"
+    };
 
     while (1) {
         short v;

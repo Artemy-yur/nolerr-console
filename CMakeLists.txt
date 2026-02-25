@@ -17,6 +17,7 @@ add_executable(Ezy_OS
         additions/help/external_help.c
         filesystem/mainfs.c
         dependencies/dependencies_py.c
+        user_settings/user_rights.c
 )
 
 target_link_libraries(Ezy_OS ws2_32 urlmon winmm)

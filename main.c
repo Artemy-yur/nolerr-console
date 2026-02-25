@@ -40,6 +40,8 @@ void execute_choice(int choice)
         listfile();
         break;
     case 8:
+            rightsSetup();
+    case 9:
 #ifdef _WIN32
         info_system();
 #else

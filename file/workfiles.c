@@ -15,7 +15,22 @@
 
 #define NAME_LEN 20
 
+
+int right_get(void) {
+    int n;
+    FILE *cfg_file = fopen("settings/rights.cvs", "r");
+    if (cfg_file == NULL) {
+        fprintf(stderr, "Ошибка открытия: %s (код: %d)\n", strerror(errno), errno);
+    }
+    fscanf(cfg_file, "%d", &n);
+    fclose(cfg_file);
+    return n;
+}
+
+
 void menu_file(void) {
+
+    const short right = right_get();
 
     printf("1. Создать файл\n2. Прочитать содержимое\n3. Внести текст в файл\n4. Удалить файл\n5. Копировать файл\n6. Все файлы\n7. Выход в меню\n");
 
@@ -39,6 +54,11 @@ void menu_file(void) {
 
     switch (v) {
         case 1: {
+            if (right < 4) {
+                printf("У вас недостаточно прав");
+                SLEEP(2);
+                break;
+            }
             char name[NAME_LEN];
             char path_file[NAME_LEN + 20];
 
@@ -50,6 +70,11 @@ void menu_file(void) {
             break;
         }
         case 2: {
+            if (right < 1) {
+                printf("У вас недостаточно прав");
+                SLEEP(2);
+                break;
+            }
             char name[NAME_LEN];
             char path_file[NAME_LEN + 20];
 
@@ -61,6 +86,11 @@ void menu_file(void) {
             break;
         }
         case 3: {
+            if (right < 2) {
+                printf("У вас недостаточно прав");
+                SLEEP(2);
+                break;
+            }
             char name[NAME_LEN];
             char path_file[NAME_LEN + 20];
 
@@ -71,6 +101,11 @@ void menu_file(void) {
             writefile(path_file);
         }
         case 4: {
+            if (right < 8) {
+                printf("У вас недостаточно прав");
+                SLEEP(2);
+                break;
+            }
             char name[NAME_LEN];
             char path_file[NAME_LEN + 20];
 

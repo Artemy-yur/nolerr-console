@@ -5,8 +5,6 @@
 #pragma once
 
 
-void listfile(void);
-
 
 void actions(void);
 
@@ -31,6 +29,10 @@ void info_system(void);
 //file system
 void initialization_fs(void);
 void check_dependencies();
+void listfile(void);
+
+//settings
+void rightsSetup(void);
 
 #define F_BLUE    "\033[1;34m" // Основной синий
 #define F_CYAN    "\033[1;36m" // Светло-голубой

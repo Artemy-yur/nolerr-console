@@ -39,7 +39,9 @@ SRCS = main.c \
        additions/notich/notich.c \
        language/locale_managere.c \
        dependencies/dependencies_py.c \
-       filesystem/mainfs.c
+       filesystem/mainfs.c \
+       user_settings/user_rights.c
+
 
 # Собираем все .o файлы из .c
 OBJS = $(SRCS:.c=.o)
