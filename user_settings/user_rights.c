@@ -45,7 +45,7 @@ void rightsSetup(void) {
         switch (v) {
             case 1: {
                 int right_user = OWEN_READ | OWEN_WRITE | OWEN_CREAT | OWEN_DELETE;
-                FILE *fp = fopen("settings/rights.cvs", "w");
+                FILE *fp = fopen("settings/rights.csv", "w");
                 if (fp == NULL) {
                     perror("Ошибка открытия");
                 }
@@ -59,7 +59,7 @@ void rightsSetup(void) {
 
             case 2: {
                 int right_user = OWEN_READ | OWEN_WRITE | OWEN_CREAT;
-                FILE *fp = fopen("settings/rights.cvs", "w");
+                FILE *fp = fopen("settings/rights.csv", "w");
                 if (fp == NULL) {
                     perror("Ошибка открытия");
                 }
@@ -73,7 +73,7 @@ void rightsSetup(void) {
             case 3:
             {
                 int right_user = OWEN_READ | OWEN_WRITE | OWEN_CREAT;
-                FILE *fp = fopen("settings/rights.cvs", "w");
+                FILE *fp = fopen("settings/rights.csv", "w");
                 if (fp == NULL) {
                     perror("Ошибка открытия");
                 }

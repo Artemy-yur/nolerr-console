@@ -11,6 +11,7 @@ static const char *folders_name[]  = {
     "../Moduls",
     "../File_work",
     "../notich",
+    "settings",
     "operating_system",
     NULL
 };

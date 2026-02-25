@@ -18,7 +18,7 @@
 
 int right_get(void) {
     int n;
-    FILE *cfg_file = fopen("settings/rights.cvs", "r");
+    FILE *cfg_file = fopen("settings/rights.csv", "r");
     if (cfg_file == NULL) {
         fprintf(stderr, "Ошибка открытия: %s (код: %d)\n", strerror(errno), errno);
     }
