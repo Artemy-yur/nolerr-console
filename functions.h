@@ -27,7 +27,6 @@ void info_system(void);
 
 
 //file system
-void initialization_fs(void);
 void check_dependencies();
 void listfile(void);
 

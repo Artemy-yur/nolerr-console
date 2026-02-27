@@ -6,6 +6,7 @@
 #include "functions.h"
 #include "sharedlibraries/global.h"
 #include "sharedlibraries/platform.h"
+#include "functions_cpp.h"
 
 static void wait_for_enter(void) {
     printf("\nНажмите Enter для продолжения...");

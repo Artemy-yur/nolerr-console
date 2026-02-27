@@ -9,15 +9,15 @@ set SRCS=main.c^
  interface/interface.c^
  additions/help/external_help.c^
  additions/infos.c^
- filesystem/mainfs.c^
  additions/notich/notich.c^
  dependencies/dependencies_py.c^
- user_settings/user_rights.c
+ user_settings/user_rights.c^
+ filesystem/filesystem.cpp
 
 set INCLUDES=-I. -Ilibraru
 
 echo Compiling with GCC...
-gcc %SRCS% %INCLUDES% -o starts_nolerros.exe -lws2_32 -Wall -Wextra -g -lurlmon -lwinmm
+gcc %SRCS% %INCLUDES% -o starts_nolerros.exe -lws2_32 -Wall -Wextra -g -lurlmon -lwinmm -lstdc++
 
 if %ERRORLEVEL% equ 0 (
     echo.

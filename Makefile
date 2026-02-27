@@ -2,7 +2,7 @@
 CC = gcc
 
 
-CFLAGS = -std=c2x -Wall -I. -I./sharedlibraries
+CFLAGS = -std=c2x -Wall -I. -I./sharedlibraries -lstdc++
 
 # Флаги линковки
 LDFLAGS = -lm
@@ -39,8 +39,8 @@ SRCS = main.c \
        additions/notich/notich.c \
        language/locale_managere.c \
        dependencies/dependencies_py.c \
-       filesystem/mainfs.c \
-       user_settings/user_rights.c
+       user_settings/user_rights.c \
+       filesystem/filesystem.cpp
 
 
 # Собираем все .o файлы из .c

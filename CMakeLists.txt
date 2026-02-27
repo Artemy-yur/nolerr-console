@@ -15,9 +15,9 @@ add_executable(Ezy_OS
         file/workfile.h
         additions/weather_module/wearth_get.c
         additions/help/external_help.c
-        filesystem/mainfs.c
         dependencies/dependencies_py.c
         user_settings/user_rights.c
+        filesystem/filesystem.cpp
 )
 
 target_link_libraries(Ezy_OS ws2_32 urlmon winmm)
