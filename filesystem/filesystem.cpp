@@ -16,7 +16,7 @@ const string folders_name[] = {
 };
 
 static void checking_folders(void){
-    for(string i : folders_name){
+    for(const string i : folders_name){
         if(fs::is_directory(i));
         else{
             if(fs::create_directories(i));
@@ -26,7 +26,6 @@ static void checking_folders(void){
         }   
     }
 }
-
 
 void initialization_fs(void){
     checking_folders();

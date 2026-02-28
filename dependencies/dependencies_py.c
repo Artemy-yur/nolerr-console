@@ -3,11 +3,29 @@
 //
 #include "../sharedlibraries/platform.h"
 #include <stdio.h>
+#define LIB_SIZE 2
+
+static const char *lib[] = {
+    "requests",
+    "colorama"
+};
+
+static void install_py(void);
+
+static void install_lib(void) {
+    char command[128];
+
+    for (size_t i = 0; i < LIB_SIZE; i++) {
+        snprintf(command,128,"pip install %s",lib[i]);
+        if (system(command) != 0) {
+            fprintf(stderr, "[ERROR] Failed to install %s\n", lib[i]);
+        }
+    }
+}
 
 static int check(void){
     return system(PYTHON_CMD " > /dev/null 2>&1");
 }
-static void install_py(void);
 
 void check_dependencies()
 {
@@ -24,10 +42,13 @@ void check_dependencies()
 
 static void install_py(void)
 {
+
+
 #ifdef __WIN32__
 
     const char *python_url = "https://www.python.org/ftp/python/3.13.0/python-3.13.0-amd64.exe";
     const char *installer = "python_installer.exe";
+
     printf("Установка python...\n");
 
     HRESULT hr = URLDownloadToFileA(NULL, python_url, installer, 0, NULL);
@@ -42,6 +63,7 @@ static void install_py(void)
             fclose(pFile);
             printf("Размер файла %.2f\n", size/(1024.0 * 1024.0));
         }
+
 
 
         SHELLEXECUTEINFOA shExecInfo = {0};
@@ -59,7 +81,11 @@ static void install_py(void)
             printf("Установка запущена.\n");
             WaitForSingleObject(shExecInfo.hProcess, INFINITE);
             CloseHandle(shExecInfo.hProcess);
+
+            install_lib();
+
             printf("Установка завершена\n");
+
         }else {
             printf("Ошибка");
         }
@@ -79,21 +105,29 @@ static void install_py(void)
         // Debian/Ubuntu
         system("sudo apt-get update");
         system("sudo apt-get install -y python3 python3-pip");
+
+        install_lib();
     }
     else if (system("which yum > /dev/null 2>&1") == 0)
     {
         // RHEL/CentOS
         system("sudo yum install -y python3 python3-pip");
+
+        install_lib();
     }
     else if (system("which dnf > /dev/null 2>&1") == 0)
     {
         // Fedora
         system("sudo dnf install -y python3 python3-pip");
+
+        install_lib();
     }
     else if (system("which pacman > /dev/null 2>&1") == 0)
     {
         // Arch Linux
         system("sudo pacman -Sy --noconfirm python python-pip");
+
+        install_lib();
     }
     else
     {
@@ -104,18 +138,18 @@ static void install_py(void)
 #elif __APPLE__
     printf("Установка Python для macOS...\n");
 
-    // Проверяем наличие Homebrew
     if (system("which brew > /dev/null 2>&1") == 0) {
         printf("Установка через Homebrew...\n");
         system("brew install python3");
     } else {
         printf("Homebrew не найден. Установка через официальный установщик...\n");
-        printf("Скачивание Python для macOS...\n");
         system("curl -O https://www.python.org/ftp/python/3.13.0/python-3.13.0-macos11.pkg");
-        printf("Запуск установщика...\n");
         system("sudo installer -pkg python-3.13.0-macos11.pkg -target /");
         system("rm python-3.13.0-macos11.pkg");
     }
 
+    install_lib();
+
 #endif
 }
+

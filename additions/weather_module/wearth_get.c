@@ -5,11 +5,24 @@
 #include "../../sharedlibraries/global.h"
 #include "../../functions.h"
 
-#define PATH_SIZE 64
+#define PATH_SIZE 128
+
+static const char *lib = "requests";
+
+
+static void install_lib(void) {
+    char command[PATH_SIZE];
+
+    snprintf(command,PATH_SIZE,"python3 -m pip install %s",lib);
+    if (system(command) != 0) {
+        fprintf(stderr, "[ERROR] Failed to install %s\n", lib);
+    }
+}
 
 void getWearth(void) {
-    // Используем system(), чтобы запустить скрипт и дождаться его завершения
-    char *path = malloc(PATH_SIZE); 
+    install_lib();
+
+    char *path = malloc(PATH_SIZE);
 
     sprintf(path,"python3 additions/weather_module/show_current_weather.py");
     int status = system(path);
