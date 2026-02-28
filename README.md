@@ -18,6 +18,9 @@ git clone https://github.com/Artemy-yur/nolerr-OS.git
 cd nolerr-OS
 build.bat
 Затем запустите Ezy_OS.exe.
+Или же
+build_os.py
+Все автоматические соберет и запустит.
 
 Для Linux
 bash
