@@ -5,13 +5,13 @@ CC = gcc
 CFLAGS = -std=c2x -Wall -I. -I./sharedlibraries -lstdc++
 
 # Флаги линковки
-LDFLAGS = -lm
+LDFLAGS = -lm -lstdc++
 
 # Определяем ОС и добавляем соответствующие библиотеки
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
     # Linux
-    CFLAGS += -D__linux__
+    CFLAGS += -D__linux__ -lstdc++
     LDFLAGS +=
 else ifeq ($(UNAME_S),Darwin)
     # macOS
@@ -53,7 +53,7 @@ all: $(PROGRAM)
 
 # Сборка программы
 $(PROGRAM): $(OBJS)
-	$(CC) $(OBJS) -o $(PROGRAM) $(LDFLAGS)
+	$(CC) $(OBJS) -o $(PROGRAM) $(LDFLAGS) 
 	@echo "Исполняемый файл создан: $(PROGRAM)"
 
 # Правило для сборки .o файлов
