@@ -38,7 +38,7 @@ void rightsSetup(void) {
 
         if (res != 1) {
             printf("Ошибка! Введите число.\n");
-            SLEEP(1); // Даем пользователю секунду прочитать ошибку
+            SLEEP(1);
             continue;
         }
 
