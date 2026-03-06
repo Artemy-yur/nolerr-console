@@ -1,28 +1,32 @@
-# Компилятор
 CC = gcc
+CXX = g++
 
-
-CFLAGS = -std=c2x -Wall -I. -I./sharedlibraries -lstdc++
+CFLAGS = -std=c2x -Wall -I. -I./sharedlibraries
+CXXFLAGS = -std=c++17 -Wall -I. -I./sharedlibraries
 
 # Флаги линковки
-LDFLAGS = -lm
+LDFLAGS = -lm -lstdc++
 
 # Определяем ОС и добавляем соответствующие библиотеки
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
     # Linux
     CFLAGS += -D__linux__
+    CXXFLAGS += -D__linux__
     LDFLAGS +=
 else ifeq ($(UNAME_S),Darwin)
     # macOS
     CFLAGS += -D__APPLE__
+    CXXFLAGS += -D__APPLE__
     LDFLAGS +=
 else
     # Windows (через MinGW)
     CFLAGS += -D_WIN32
+    CXXFLAGS += -D_WIN32
     LDFLAGS += -lws2_32 -lurlmon -lwinmm
     # Отключаем предупреждения о pragma comment
     CFLAGS += -Wno-unknown-pragmas
+    CXXFLAGS += -Wno-unknown-pragmas
 endif
 
 # Имя программы
@@ -42,9 +46,14 @@ SRCS = main.c \
        user_settings/user_rights.c \
        filesystem/filesystem.cpp
 
+# Явно разделяем C и C++ файлы
+C_SRCS = $(filter %.c,$(SRCS))
+CPP_SRCS = $(filter %.cpp,$(SRCS))
 
-# Собираем все .o файлы из .c
-OBJS = $(SRCS:.c=.o)
+# Генерируем объектные файлы
+C_OBJS = $(C_SRCS:.c=.o)
+CPP_OBJS = $(CPP_SRCS:.cpp=.o)
+OBJS = $(C_OBJS) $(CPP_OBJS)
 
 # По умолчанию собираем
 all: $(PROGRAM)
@@ -53,17 +62,21 @@ all: $(PROGRAM)
 
 # Сборка программы
 $(PROGRAM): $(OBJS)
-	$(CC) $(OBJS) -o $(PROGRAM) $(LDFLAGS)
+	$(CXX) $(OBJS) -o $(PROGRAM) $(LDFLAGS)
 	@echo "Исполняемый файл создан: $(PROGRAM)"
 
-# Правило для сборки .o файлов
+# Правило для сборки .o файлов из C
 %.o: %.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# Правило для сборки .o файлов из C++
+%.o: %.cpp
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 # Очистка
 clean:
 	rm -rf $(OBJS) $(PROGRAM)
-
 
 .PHONY: all clean

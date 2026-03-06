@@ -8,7 +8,7 @@
 #include "../functions.h"
 #include "workfile.h"
 #include <dirent.h>
-
+#include <errno.h>
 
 #define MAX_CHOICE 7
 #define MIN_CHOICE 1
@@ -54,7 +54,7 @@ void menu_file(void) {
 
     switch (v) {
         case 1: {
-            if (right < 4) {
+            if (right <= 7) {
                 printf("У вас недостаточно прав");
                 SLEEP(2);
                 break;
@@ -86,7 +86,7 @@ void menu_file(void) {
             break;
         }
         case 3: {
-            if (right < 2) {
+            if (right <= 7) {
                 printf("У вас недостаточно прав");
                 SLEEP(2);
                 break;

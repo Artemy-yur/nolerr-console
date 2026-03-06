@@ -72,7 +72,7 @@ void rightsSetup(void) {
             }
             case 3:
             {
-                int right_user = OWEN_READ | OWEN_WRITE | OWEN_CREAT;
+                int right_user = OWEN_READ;
                 FILE *fp = fopen("settings/rights.csv", "w");
                 if (fp == NULL) {
                     perror("Ошибка открытия");

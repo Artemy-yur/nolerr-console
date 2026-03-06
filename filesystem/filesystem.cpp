@@ -1,3 +1,7 @@
+//
+// Created by Artemy on 02.03.2026.
+//
+
 #include <iostream>
 #include <string>
 #include <filesystem>
@@ -7,12 +11,12 @@ using namespace std;
 namespace fs = std::filesystem;
 
 const string folders_name[] = {
-     "../Home",
-    "../Moduls",
-    "../File_work",
-    "../notich",
-    "settings",
-    "operating_system"
+    "../Home",
+   "../Moduls",
+   "../File_work",
+   "../notich",
+   "settings",
+   "operating_system"
 };
 
 static void checking_folders(void){
@@ -23,7 +27,7 @@ static void checking_folders(void){
             else{
                 cerr << "Ошибка создания папки";
             }
-        }   
+        }
     }
 }
 
