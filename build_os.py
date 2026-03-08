@@ -13,7 +13,8 @@ SRCS = " ".join([
     "additions/notich/notich.c",
     "dependencies/dependencies_py.c",
     "user_settings/user_rights.c",
-    "filesystem/filesystem.cpp"
+    "filesystem/filesystem.cpp",
+    "additions/website_accessibility/accessibility.cpp"
 ])
 INCLUDES =  "-I. -Ilibraru"
 start = "starts_nolerros.exe"
