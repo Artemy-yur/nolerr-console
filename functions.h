@@ -15,13 +15,11 @@ void times(void);
 void getWearth(void);
 
 //interface
-int start(void);
 void python_help(void);
 int starts(void);
 void russian_locale(void);
 void menu_file(void);
 
-void notich(void);
 
 void info_system(void);
 

@@ -34,8 +34,9 @@ void execute_choice(int choice)
         python_help();
         break;
     case 6:
-        notich();
+        notich_cpp();
         getchar();
+        starts();
         break;
     case 7:
         listfile();

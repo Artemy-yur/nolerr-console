@@ -1,5 +1,11 @@
 import os
-from colorama import *
+
+CYAN = "\033[36m"
+GOLD = "\033[33m"
+RESET = "\033[0m"
+BOLD = "\033[1m"
+RED = "\033[31m"
+GREEN = "\033[32m"
 
 SRCS = " ".join([
     "main.c",
@@ -10,26 +16,26 @@ SRCS = " ".join([
     "interface/interface.c",
     "additions/help/external_help.c",
     "additions/infos.c",
-    "additions/notich/notich.c",
+    "additions/notich/notich.cpp",
     "dependencies/dependencies_py.c",
     "user_settings/user_rights.c",
     "filesystem/filesystem.cpp",
     "additions/website_accessibility/accessibility.cpp"
 ])
-INCLUDES =  "-I. -Ilibraru"
+
+INCLUDES = "-I. -Ilibraru"
 start = "starts_nolerros.exe"
-Compiling  = f"gcc {SRCS} {INCLUDES} -o starts_nolerros.exe -lws2_32 -Wall -Wextra -g -lurlmon -lwinmm -lstdc++"
 
+compiling = f"g++ {SRCS} {INCLUDES} -o {start} -lws2_32 -Wall -Wextra -g -lurlmon -lwinmm -std=c++17"
 
-
-if os.system(Compiling) != 0:
-    print(Fore.RED,"---------------------------------",Fore.RESET)
-    print(Fore.RED,"    Compilation failed",Fore.RESET)
-    print(Fore.RED, "---------------------------------", Fore.RESET)
-    input("press enter to continue")
+if os.system(compiling) != 0:
+    print(f"{RED}---------------------------------{RESET}")
+    print(f"{RED}    Compilation failed{RESET}")
+    print(f"{RED}---------------------------------{RESET}")
+    input("Press enter to continue")
 else:
-    print(Fore.GREEN, "---------------------------------", Fore.RESET)
-    print(Fore.GREEN,"  Compilation succeeded",Fore.RESET)
-    print(Fore.GREEN, "---------------------------------", Fore.RESET)
+    print(f"{GREEN}---------------------------------{RESET}")
+    print(f"{GREEN}  Compilation succeeded{RESET}")
+    print(f"{GREEN}---------------------------------{RESET}")
     os.system(start)
     exit(0)

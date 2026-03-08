@@ -5,7 +5,7 @@ CFLAGS = -std=c2x -Wall -I. -I./sharedlibraries
 CXXFLAGS = -std=c++17 -Wall -I. -I./sharedlibraries
 
 # Флаги линковки
-LDFLAGS = -lm -lstdc++
+LDFLAGS = -lm -lstdc++ -lc++ -std=c++17
 
 # Определяем ОС и добавляем соответствующие библиотеки
 UNAME_S := $(shell uname -s)
@@ -40,12 +40,13 @@ SRCS = main.c \
        interface/interface.c \
        additions/weather_module/wearth_get.c \
        additions/help/external_help.c \
-       additions/notich/notich.c \
        language/locale_managere.c \
        dependencies/dependencies_py.c \
        user_settings/user_rights.c \
        filesystem/filesystem.cpp \
-       additions/website_accessibility/accessibility.cpp
+       additions/website_accessibility/accessibility.cpp \
+       additions/notich/notich.cpp
+
 
 # Явно разделяем C и C++ файлы
 C_SRCS = $(filter %.c,$(SRCS))

@@ -70,6 +70,7 @@
 // Общие определения
 #ifndef F_OK
     #define F_OK 0
+    #define True 1
 #endif
 
 #ifndef PYTHON_CMD

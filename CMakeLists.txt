@@ -10,7 +10,6 @@ add_executable(Ezy_OS
         additions/timenow.c
         interface/interface.c
         additions/infos.c
-        additions/notich/notich.c
         language/locale_managere.c
         file/workfile.h
         additions/weather_module/wearth_get.c
