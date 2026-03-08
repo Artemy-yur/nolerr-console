@@ -7,7 +7,7 @@
 #include "../sharedlibraries/platform.h"
 #include  "interface.h"
 
-#define MAX_CHOICE 9
+#define MAX_CHOICE 10
 #define MIN_CHOICE 1
 
 #define LEN_ARR(arr) sizeof(arr)/sizeof(*arr)
@@ -30,7 +30,7 @@ int starts(void) {
 
         const char *vibor[] = {
             "Работа над файлом", "Математика", "Время сейчас", "Погода",
-            "Справка (Help)", "Заметка", "Все файлы", "Настройки","Инфо о системе"
+            "Справка (Help)", "Заметка", "Все файлы","Проверка доступности сайта", "Настройки","Инфо о системе"
         };
 
         for (int i = 0; i < LEN_ARR(vibor); i++) {

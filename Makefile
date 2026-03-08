@@ -44,7 +44,8 @@ SRCS = main.c \
        language/locale_managere.c \
        dependencies/dependencies_py.c \
        user_settings/user_rights.c \
-       filesystem/filesystem.cpp
+       filesystem/filesystem.cpp \
+       additions/website_accessibility/accessibility.cpp
 
 # Явно разделяем C и C++ файлы
 C_SRCS = $(filter %.c,$(SRCS))

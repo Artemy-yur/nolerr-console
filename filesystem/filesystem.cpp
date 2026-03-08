@@ -19,7 +19,7 @@ const string folders_name[] = {
    "operating_system"
 };
 
-static void checking_folders(void){
+static void checking_folders(){
     for(const string i : folders_name){
         if(fs::is_directory(i));
         else{

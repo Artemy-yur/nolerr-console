@@ -18,6 +18,7 @@ add_executable(Ezy_OS
         dependencies/dependencies_py.c
         user_settings/user_rights.c
         filesystem/filesystem.cpp
+        additions/website_accessibility/accessibility.cpp
 )
 
 target_link_libraries(Ezy_OS ws2_32 urlmon winmm)
