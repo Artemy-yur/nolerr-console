@@ -6,7 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <filesystem>
-#include <__filesystem/filesystem_error.h>
+
 
 #include "functions.h"
 #include "../../functions_cpp.h"
@@ -40,8 +40,6 @@ static void append_notich() {
     }
 }
 
-extern "C"
-{
     void notich_cpp() {
         short choice;
 
@@ -72,7 +70,7 @@ extern "C"
             }
         }
     }
-}
+
 
 
 static void write_notich(void) {
