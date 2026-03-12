@@ -6,7 +6,7 @@
 #define PATH_SIZE 64
 
 void python_help(void) {
-    char *path = malloc(PATH_SIZE); 
+    char *path = (char*) malloc(PATH_SIZE); 
     sprintf(path,"python3 additions/help/show_function_help.py");
 
     int status = system(path);

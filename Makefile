@@ -4,8 +4,7 @@ CXX = g++
 CFLAGS = -std=c2x -Wall -I. -I./sharedlibraries
 CXXFLAGS = -std=c++17 -Wall -I. -I./sharedlibraries
 
-# Флаги линковки
-LDFLAGS = -lm -lstdc++ -lc++ -std=c++17
+LDFLAGS = -lm -lstdc++ -std=c++17
 
 # Определяем ОС и добавляем соответствующие библиотеки
 UNAME_S := $(shell uname -s)

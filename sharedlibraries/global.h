@@ -20,9 +20,8 @@ void execute_choice(int choice);
 #endif
 #define LEN_ARR(arr) sizeof(arr) / sizeof(*arr)
 
-
-#define F_BLUE    "\033[1;34m" // Основной синий
-#define F_CYAN    "\033[1;36m" // Светло-голубой
-#define F_WHITE   "\033[1;37m" // Жирный белый
-#define F_BOLD    "\033[1m"    // Просто жирный
-#define RESET     "\033[0m"
+#define F_BLUE "\033[1;34m"  // Основной синий
+#define F_CYAN "\033[1;36m"  // Светло-голубой
+#define F_WHITE "\033[1;37m" // Жирный белый
+#define F_BOLD "\033[1m"     // Просто жирный
+#define RESET "\033[0m"
