@@ -248,7 +248,7 @@ void copyfile(const char *from, const char *to) {
         return;
     }
 
-    char *buffer = malloc(length);
+    char *buffer = (char *)malloc(length);
     if (buffer == NULL) {
         perror("Memory allocation failed");
         fclose(file);
