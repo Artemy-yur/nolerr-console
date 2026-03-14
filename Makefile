@@ -44,7 +44,7 @@ SRCS = main.c \
        user_settings/user_rights.c \
        filesystem/filesystem.cpp \
        additions/website_accessibility/accessibility.cpp \
-       additions/notich/notich.cpp
+       additions/notich/notich.c
 
 
 # Явно разделяем C и C++ файлы

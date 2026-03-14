@@ -33,13 +33,13 @@ void execute_choice(int choice)
     case 5:
         python_help();
         break;
-    case 6:
-        notich_cpp();
-        getchar();
-        starts();
-        break;
     case 7:
         listfile();
+        break;
+    case 6:
+        notich();
+        getchar();
+        starts();
         break;
     case 8:
         accessibility();

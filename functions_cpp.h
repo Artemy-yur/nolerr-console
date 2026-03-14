@@ -7,7 +7,7 @@ extern "C" {
 
     void initialization_fs(void);
     void accessibility();
-    void notich_cpp();
+
 #ifdef __cplusplus
 }
 #endif

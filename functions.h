@@ -19,7 +19,7 @@ void python_help(void);
 int starts(void);
 void russian_locale(void);
 void menu_file(void);
-
+void notich();
 
 void info_system(void);
 
