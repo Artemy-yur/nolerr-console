@@ -14,7 +14,7 @@ static const char *work_notich[] = {
 
 };
 
-//static void read_notich(void);
+static void read_notich(void);
 static void write_notich(void);
 static void append_notich(void);
 
@@ -37,7 +37,7 @@ void notich() {
         if (0 <= choice && choice <= sizeof(work_notich) / sizeof(*work_notich)) {
             switch (choice) {
                 case 1:
-                    //read_notich();
+                    read_notich();
 
                     break;
                 case 2:
@@ -59,48 +59,18 @@ void notich() {
 }
 
 void write_notich() {
-    char *text = NULL;
     char buffer[256];
-    size_t total_length = 0;
-
     FILE *f = fopen(filename, "w");
-    if (f == NULL) {
-        perror("Error occurs during write");
-        return;
+    if (!f) { perror("Error"); return; }
+
+    printf("Введите текст (пустая строка для сохранения):\n");
+    while (fgets(buffer, sizeof(buffer), stdin) && buffer[0] != '\n') {
+        fputs(buffer, f);
     }
-    printf("Введите текст заметки (для завершения введите пустую строку):\n");
 
-    while (1) {
-        if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
-            break;
-        }
-
-
-        if (buffer[0] == '\n') {
-            break;
-        }
-
-
-        size_t line_length = strlen(buffer);
-        char *new_text = (char*)realloc(text, total_length + line_length + 1);
-
-        if (new_text == NULL) {
-            printf("Ошибка выделения памяти!\n");
-            free(text);
-            fclose(f);
-            return;
-        }
-
-        text = new_text;
-
-        strcpy(text + total_length, buffer);
-        total_length += line_length;
-    }
-    fprintf(f, "%s", text);
-
-    free(text);
-
-    return;
+    fclose(f);
+    CLEAR;
+    notich();
 }
 
 void append_notich() {
@@ -118,12 +88,14 @@ void append_notich() {
 
     while (1) {
         if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
-            break;
+            CLEAR;
+            notich();
         }
 
 
         if (buffer[0] == '\n') {
-            break;
+            CLEAR;
+            notich();
         }
 
 
@@ -145,5 +117,20 @@ void append_notich() {
 
     free(text);
 
+    return;
+}
+
+void read_notich() {
+    FILE *file = fopen(filename, "r");
+    if (!file) { perror("Error"); return; }
+
+    int c;
+    while ((c = fgetc(file)) != EOF) putchar(c);
+    fclose(file);
+
+    printf("\nНажмите Enter, чтобы вернуться...");
+    while (getchar() != '\n');
+    CLEAR;
+    notich();
     return;
 }
