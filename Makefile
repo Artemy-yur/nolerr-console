@@ -76,7 +76,11 @@ $(PROGRAM): $(OBJS)
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Очистка
+# Тестировка
+test: $(PROGRAM)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(PROGRAM)
+
+# очистка
 clean:
 	rm -rf $(OBJS) $(PROGRAM)
 
