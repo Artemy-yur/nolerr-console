@@ -29,7 +29,7 @@ void notich() {
     }
 
 
-    while (true) {
+    while (1) {
         scanf("%hd", &choice);
 
         int c;
@@ -109,12 +109,15 @@ void append_notich() {
         }
 
         text = new_text;
-
         strcpy(text + total_length, buffer);
         total_length += line_length;
+        
+        free(new_text);
+        fclose(f);
     }
     fprintf(f, "\n%s", text);
-
+    
+    fclose(f);
     free(text);
 
     return;
