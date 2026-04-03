@@ -1,6 +1,7 @@
 
 #include "../../functions.h"
 #include "../../sharedlibraries/platform.h"
+#include "../../sharedlibraries/global.h"
 
 static const char *filename = "../notich/notich.txt";
 
