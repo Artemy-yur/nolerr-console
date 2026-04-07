@@ -45,7 +45,8 @@ void execute_choice(int choice)
         accessibility();
         break;
     case 9:
-            rightsSetup();
+        rightsSetup();
+        break;
     case 10:
 #ifdef _WIN32
         info_system();
