@@ -79,11 +79,8 @@ batch
 
 git clone https://github.com/ArtemyDev/nolerr-OS.git
 cd nolerr-OS
-mkdir build
-cd build
-cmake ..
-cmake --build .
-bild.bat
+build.bat
+
 Для Linux
 bash
 
@@ -92,7 +89,7 @@ cd nolerr-OS
 mkdir build && cd build
 cmake ..
 make
-./Ezy_OS
+./nolerr-console
 Разработка новых модулей
 
 Система спроектирована так, чтобы быть максимально расширяемой. Чтобы добавить свой модуль, следуйте инструкции:
