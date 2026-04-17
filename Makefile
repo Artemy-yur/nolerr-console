@@ -43,6 +43,7 @@ SRCS = main.c \
        dependencies/dependencies_py.c \
        user_settings/user_rights.c \
        filesystem/filesystem.cpp \
+       additions/infos.c \
        additions/website_accessibility/accessibility.cpp \
        additions/notich/notich.c
 
@@ -78,8 +79,11 @@ $(PROGRAM): $(OBJS)
 
 # Тестировка
 test: $(PROGRAM)
+ifeq ($(shell uname),Darwin)
+	leaks -atExit -- ./$(PROGRAM)
+else
 	valgrind --leak-check=full --show-leak-kinds=all ./$(PROGRAM)
-
+endif
 # очистка
 clean:
 	rm -rf $(OBJS) $(PROGRAM)

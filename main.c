@@ -48,13 +48,7 @@ void execute_choice(int choice)
         rightsSetup();
         break;
     case 10:
-#ifdef _WIN32
         info_system();
-#else
-        printf("В linux системе пока не работает!");
-        getchar();
-        break;
-#endif
         break;
     default:
         printf("Неизвестное действие!\n");

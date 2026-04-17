@@ -36,3 +36,6 @@ void rightsSetup(void);
 #define F_WHITE   "\033[1;37m" // Жирный белый
 #define F_BOLD    "\033[1m"    // Просто жирный
 #define RESET     "\033[0m"
+
+
+void execute_choice(int choice);
